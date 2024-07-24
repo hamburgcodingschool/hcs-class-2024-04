@@ -1,0 +1,22 @@
+{
+    "people": [
+        {
+            "name": "Pedro Remoaldo",
+            "city": "Ermesinde",
+            "country": "Portugal",
+            "age": 28
+        },
+        {
+            "name": "Anna Kliemann",
+            "city": "Luebeck",
+            "country": "Germany",
+            "age": 27
+        },
+        {
+            "name": "Usha",
+            "city": "Bangalore",
+            "country": "India",
+            "age": 23
+        }
+    ]
+}

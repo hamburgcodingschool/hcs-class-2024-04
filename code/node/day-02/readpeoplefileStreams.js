@@ -1,11 +1,12 @@
 const fs = require('fs');
-const csv = require('csv-parser'); // middleware
+const csv = require('csv-parser');  // middleware
 
 fs.createReadStream('people.csv')
     .pipe(csv({ separator: ';' }))
     .on('data', (row) => { // data event
         console.log("Reading row");
         console.log(row);
+        console.table(row);
         console.log('Name:', row.Name);
         console.log('Age:', row.Age);
     })
