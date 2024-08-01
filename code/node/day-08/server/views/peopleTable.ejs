@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of persons</title>
+    <link rel="stylesheet" href="styles.css"> -->
+    <%# Loading an external file %>
+        <%- include("partials/head.ejs", { title: "List of persons" }) %>
+</head>
+
+<body>
+    <header>
+        <%- include("partials/menu.ejs") %>
+    </header>
+    <h1>List of students</h1>
+    <% if (peopleList.length!==0) { %>
+        <table class="dataTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Continente</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let person of peopleList) { %>
+                    <tr>
+                        <td>
+                            <%= person.name %>
+                        </td>
+                        <td>
+                            <%= person.city %>
+                        </td>
+                        <td>
+                            <%= person.country %>
+                        </td>
+                        <td>
+                            <%= person.age %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Total number of persons: <%= peopleList.length %>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <% } else { %>
+            <p>There are no records in the database</p>
+            <% } %>
+                <script>
+                    let rows = document.querySelectorAll(".dataTable tbody tr");
+                    for (row of rows) {
+                        row.addEventListener("click", function () {
+                            console.log("You clicked me!");
+                        });
+                    }
+                </script>
+</body>
+
+</html>
