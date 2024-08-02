@@ -1,0 +1,34 @@
+#countriesList {
+    border-collapse: collapse;
+}
+
+#countriesList,
+#countriesList th,
+#countriesList td {
+    border: 1px solid #000;
+}
+
+#countriesList th,
+#countriesList td {
+    padding: 10px 20px;
+}
+
+#countriesList thead tr {
+    background-color: black;
+    color: white;
+}
+
+#countriesList tfoot tr {
+    background-color: #666;
+    color: white;
+}
+
+#countriesList tbody tr:nth-child(even) {
+    background-color: #ccc;
+}
+
+#countriesList tbody tr:hover {
+    background-color: #999;
+    color: white;
+    cursor: pointer;
+}
