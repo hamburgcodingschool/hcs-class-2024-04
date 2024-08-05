@@ -16,8 +16,9 @@ fetch(url)
     .then(data => {
         let content = "";
         for (let country of data) {
-            content += `<tr >`;
-            content += `<td>${country.name}</td>`;
+            content += `<tr class="countryInfo" data-id="${country._id}">`;
+            // content += `<td>${country.name}</td>`;
+            content += `<td><a href="country.html?id=${country._id}">${country.name}</a></td>`;
             content += `<td>${country.continent}</td>`;
             content += `<td>${country.region}</td>`;
             content += `<td>${country.surfacearea}</td>`;
@@ -31,6 +32,14 @@ fetch(url)
         }
         countriesTable.innerHTML = content;
         total.textContent = data.length;
+        let linesCountryInfo = document.querySelectorAll(".countryInfo");
+        for (let line of linesCountryInfo) {
+            line.addEventListener("click", function () {
+                let id = this.getAttribute("data-id");
+                // console.log(id);
+                window.location.href = "country.html?id=" + id;
+            })
+        }
     })
     .catch(error => {
         alert("The following error occurred: " + error);
