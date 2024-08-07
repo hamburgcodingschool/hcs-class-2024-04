@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food management</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Food management</h1>
+    <form id="formFood">
+        <p><label for="name">Food name:</label> <input type="text" id="name"></p>
+        <p><label for="description">Description:</label> <textarea id="description"></textarea></p>
+        <p><label for="price">Price:</label> <input type="text" id="price">€</p>
+        <!-- <p><label for="category">Category:</label> <input type="text" id="category"></p> -->
+        <p><label for="category">Category:</label> <select id="category"></select></p>
+        <p><input type="button" id="btInsert" value="Insert menu item"></p>
+    </form>
+    <table id="foodList" class="dataTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">Total number of items: <span id="totalNumFood"></span></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmation</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Do you confirm the deletion of the food item?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="confirmButton">Yes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <script src="food.js"></script>
+</body>
+
+</html>
