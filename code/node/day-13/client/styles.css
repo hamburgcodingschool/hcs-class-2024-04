@@ -1,0 +1,38 @@
+.dataTable {
+    border-collapse: collapse;
+}
+
+.dataTable,
+.dataTable th,
+.dataTable td {
+    border: 1px solid #000;
+}
+
+.dataTable th,
+.dataTable td {
+    padding: 10px 20px;
+}
+
+.dataTable thead tr {
+    background-color: black;
+    color: white;
+}
+
+.dataTable tfoot tr {
+    background-color: #666;
+    color: white;
+}
+
+.dataTable tbody tr:nth-child(even) {
+    background-color: #ccc;
+}
+
+.dataTable tbody tr:hover {
+    background-color: #999;
+    color: white;
+    cursor: pointer;
+}
+
+[type='text'] {
+    background-color: lightgrey;
+}

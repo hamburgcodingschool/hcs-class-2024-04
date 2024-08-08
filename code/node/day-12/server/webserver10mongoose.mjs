@@ -30,6 +30,7 @@ app.get('/', function (req, res) {
 app.get('/food', async function (req, res) {
     const listFoodItems = [];
     const foodItems = foodCollection.find().cursor();
+
     foodItems.on('data', function (foodItem) {
         listFoodItems.push(foodItem);
     });
